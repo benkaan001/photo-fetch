@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "M PLUS 2", sans-serif;
+  font-size: 100%;
+}
+:root {
+  --primary-blue-darker: #434b7b;
+  --primary-blue-lighter: #8a90a5;
+
+  --primary-brown-darker: #592e14;
+  --primary-brown-lighter: #ae7a58;
+
+  --primary-gray-darker: #bab1af;
+  --primary-gray-lighter: #dbdce1;
+}
