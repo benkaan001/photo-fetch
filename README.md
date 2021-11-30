@@ -22,7 +22,11 @@ Responsive front-end application featuring front-end `fetch API` calls with `asy
 
 ## Tests
 
-![demo]()
+![demo](https://github.com/benkaan001/photo-fetch/blob/main/assets/images/Photo-Fetch.gif)
+
+![full-screen](https://github.com/benkaan001/photo-fetch/blob/main/assets/images/full-screen.png)
+![medium](https://github.com/benkaan001/photo-fetch/blob/main/assets/images/medium.png)
+![small-screen](https://github.com/benkaan001/photo-fetch/blob/main/assets/images/small-screen.png)
 
 Check out the deployed application
 [here](https://benkaan001.github.io/photo-fetch/)
