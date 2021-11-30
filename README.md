@@ -1,5 +1,5 @@
-<h1 align="center">Responsive Front End</h1>
-<h3 align="center">Photo Fetch</h3>
+<h1 align="center">Fetch API</h1>
+<h2 align="center">Photo Fetch</h2>
 
 <p align="center">
     <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
