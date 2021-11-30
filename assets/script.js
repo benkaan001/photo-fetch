@@ -72,10 +72,10 @@ async function getMoreSearchedImages(pageNumber) {
 
 function loadMoreImages(e) {
   pageNumber = defaultPageNumber++;
-  const loadMoreData = e.target.getAttribute("data-img");
-  if (loadMoreData === "curated") {
-    getImages(pageNumber);
-  } else {
-    getMoreSearchedImages(pageNumber);
-  }
+  // const loadMoreData = e.target.getAttribute("data-img");
+  // if (loadMoreData === "curated") {
+  //   getImages(pageNumber);
+  // } else {
+  getMoreSearchedImages(pageNumber);
+  // }
 }
