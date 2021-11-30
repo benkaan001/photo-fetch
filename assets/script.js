@@ -1,27 +1,25 @@
 const apiKey = "563492ad6f91700001000001aa263508ec134ddeb8ad875e9de15518";
 const galleryEl = document.querySelector(".gallery");
-const searchForm = document.querySelector(".header form");
+const searchFormEl = document.querySelector(".header form");
 const loadAnchorEl = document.querySelector(".load-ancor");
 const h1El = document.querySelector("h1");
 
-let defaulPageNumber = 1;
+let defaultPageNumber = 1;
 let defaultSearchInput = "";
-let pageNumber;
+let pageNumber = 1;
 
-document.addEventListener("DOMContentLoaded", () => {
-  getImages(defaulPageNumber);
-});
-searchForm.addEventListener("submit", (e) => {
-  // defaulPageNumber = 1;
+document.addEventListener("DOMContentLoaded", getImages(5));
+
+searchFormEl.addEventListener("submit", (e) => {
   loadSearchedImages(e);
 });
+
 loadAnchorEl.addEventListener("click", (e) => {
   loadMoreImages(e);
 });
 h1El.addEventListener("click", () => {
-  // defaulPageNumber = 1;
   galleryEl.innerHTML = "";
-  getImages(defaulPageNumber);
+  getImages(defaultPageNumber);
 });
 
 async function getImages(pageNumber) {
@@ -67,22 +65,17 @@ async function loadSearchedImages(e) {
   e.target.reset();
 }
 async function getMoreSearchedImages(pageNumber) {
-  // console.log(newSearchInput)
   const baseURL = `https://api.pexels.com/v1/search?query=${defaultSearchInput}&page=${pageNumber}&per_page=12`;
   const data = await fetchImages(baseURL);
-  console.log(data);
   generatePage(data.photos);
 }
 
 function loadMoreImages(e) {
-  let pageNumber = defaulPageNumber++;
-  console.log(pageNumber);
+  pageNumber = defaultPageNumber++;
   const loadMoreData = e.target.getAttribute("data-img");
   if (loadMoreData === "curated") {
-    // load next page for curated]
     getImages(pageNumber);
   } else {
-    // load next page for search
     getMoreSearchedImages(pageNumber);
   }
 }
