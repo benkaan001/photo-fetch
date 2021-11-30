@@ -8,7 +8,7 @@ let defaultPageNumber = 1;
 let defaultSearchInput = "";
 let pageNumber = 1;
 
-document.addEventListener("DOMContentLoaded", getImages(5));
+document.addEventListener("DOMContentLoaded", getImages(3));
 
 searchFormEl.addEventListener("submit", (e) => {
   loadSearchedImages(e);
@@ -71,11 +71,11 @@ async function getMoreSearchedImages(pageNumber) {
 }
 
 function loadMoreImages(e) {
-  pageNumber = defaultPageNumber++;
-  // const loadMoreData = e.target.getAttribute("data-img");
-  // if (loadMoreData === "curated") {
-  //   getImages(pageNumber);
-  // } else {
-  getMoreSearchedImages(pageNumber);
-  // }
+  pageNumber = ++defaultPageNumber;
+  const loadMoreData = e.target.getAttribute("data-img");
+  if (loadMoreData === "curated") {
+    getImages(pageNumber);
+  } else {
+    getMoreSearchedImages(pageNumber);
+  }
 }
